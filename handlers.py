@@ -12,10 +12,7 @@ def start(update, context):
 
     context.bot.send_message(
         chat_id=TELEGRAM_SUPPORT_CHAT_ID,
-        text=f"""
-        username: {user_info["username"]}
-        ID телеграмм: {user_info["id"]}
-        ID заказа: {update.message.text}
+        text=f"""username: {user_info["username"]}\nID заказа: {update.message.text.replace(' /start ', '')}
         """,
     )
 
